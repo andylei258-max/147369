@@ -2,6 +2,8 @@
 
 日期：2026-10-14。执行环境：Linux x86_64 云端容器，工作目录 `/workspace/147369`；**没有 Windows 桌面、VDD 驱动加载环境、安卓模拟器或物理平板**。
 
+另已在 GitHub Actions 的 Windows/Ubuntu runner 完成自动构建和检查，见下表。Windows runner 执行了构建脚本及核心检查，没有启动桌面主机或安装驱动。
+
 工具：.NET SDK **8.0.426**；Temurin JDK **17.0.20.1+1**；Gradle **8.9**；Android Gradle Plugin **8.7.3**；Android Platform **35**、Build Tools **34.0.0/35.0.0**。下载经环境 HTTP 代理并保留 TLS 校验，Gradle JVM 配置了环境代理和 CA；这些云端专用路径/信任库没有写入项目配置。
 
 ## 已验证
@@ -19,8 +21,11 @@
 | `android/gradlew --version` | **Gradle 8.9**，wrapper 实际下载完成并通过固定 SHA256 | 版本固定的构建入口及下载校验正常，不代表 Windows BAT 入口已执行 |
 | `apksigner verify .../app-debug.apk` | 退出码 0 | debug APK 包签名结构可验证；非生产签名或设备安装证明 |
 | `git diff --check`、文档相对链接检查 | 通过 | 补丁空白规范及文档路径一致性 |
+| GitHub Actions [运行 38620646673](https://github.com/andylei258-max/147369/actions/runs/38620646673)，提交 `116f62b79a26f9b6b00bf750996fa9696e36a217` | **windows-build / android-build 均成功** | Windows PowerShell 构建脚本、36 项核心检查、自包含发布；Ubuntu Java 7 项检查、2 帧 C#→Java 互通、APK 编译与 lint；两个 artifact 上传成功。**不包含驱动/桌面主机/设备运行** |
 
-Android 原产物：`android/app/build/outputs/apk/debug/app-debug.apk`。Windows 原产物：`artifacts/windows-win-x64/`。这些生成文件被 `.gitignore` 排除，源码和构建入口在 Git 分支保存；本地 Codex 重新构建即可。GitHub Actions 配置会生成可下载的构建 artifact，但需查看实际 workflow 结果，不能把配置存在当作已成功运行。
+Android 原产物：`android/app/build/outputs/apk/debug/app-debug.apk`。Windows 原产物：`artifacts/windows-win-x64/`。这些生成文件被 `.gitignore` 排除，源码和构建入口在 Git 分支保存；本地 Codex 可重新构建。上述成功运行页面已提供 `windows-x64-unverified-on-device` 和 `android-debug-unverified-on-device` 两个可下载 artifact；下载可能需要登录 GitHub，产物也会按平台保留期限过期。
+
+本记录最后更新仅修改文档，使用 `[skip ci]` 避免重复构建；上表链接明确指向最后一次已验证的代码和流水线提交。
 
 36 项检查包括：首次默认关闭、未连接不能开启、首帧确认限制、开关回主屏、强制锁优先和解锁保持关闭、断联释放且保留锁标记、重连关闭、租约边界、正确确认续租、鼠标 API 故障释放/恢复、包长度/big-endian、错配对码拒绝、仅 TCP 连接不启用限制、第二接收者拒绝但不扰乱第一会话、错误序号拒绝、确认停止、EOF 恢复、多个来源并发状态切换。FakeCursor 不验证 Windows 的实际 ClipCursor 行为。
 

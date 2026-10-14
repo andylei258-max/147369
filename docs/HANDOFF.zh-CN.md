@@ -10,6 +10,8 @@
 
 云端已经交叉编译 Windows 主机并生成 win-x64 自包含目录，生成安卓调试 APK。状态、真实 loopback TCP 和跨语言 JPEG 检查已运行。**设备可用性未验收**：Windows 驱动加载、GDI 虚拟屏采集、主机运行、系统快捷键、游标 API、守护进程及真实 APK 安装/显示均未在用户设备验证。
 
+GitHub Actions [运行 38620646673](https://github.com/andylei258-max/147369/actions/runs/38620646673) 的 Windows 和 Android 任务均成功：Windows 构建脚本已实际运行，APK 编译/lint 通过；页面底部有两个构建 artifact。下载后仍须完成下述签名、安装与设备验收，不能当作已安装或实测成功。
+
 先读 [验证记录](VALIDATION.zh-CN.md) 和 [设备测试清单](DEVICE-TESTS.zh-CN.md)。不要把 36 个模拟/网络检查写成 36 个设备测试通过。
 
 ## 依赖
