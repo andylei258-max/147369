@@ -1,13 +1,13 @@
 # 保存状态及分支恢复
 
-2026-10-14 云端交接时：
+2026-10-14 最新保存状态：
 
 - 云端真实工作仓库：`/workspace/147369`。
 - 目标远端：`https://github.com/andylei258-max/147369.git`。
-- 本地开发分支：`dev/tablet-extend-mvp`，源码、文档、Gradle wrapper 和构建入口已经提交。
+- 开发分支：`dev/tablet-extend-mvp`，源码、文档、Gradle wrapper 和构建入口已经提交并推送到 GitHub。
 - 原 main 保持 `79675ceed6b9973f112808e129f490e4149e4ce4`，未合并、未修改。
-- 普通 Git push 返回 403；已连接 GitHub 工具创建同一分支也返回 403 / `Resource not accessible by integration`。
-- **远端没有此次开发分支或代码；不能把本地提交当成已推送。** 当前集成写入权限需修复，或由本地已授权 Git 推送。
+- 之前普通 Git push 和 GitHub 工具创建分支均返回 403；用户安装 ChatGPT Codex Connector 并授予仓库访问后已解决。
+- **远端已有此次开发分支和代码：** [打开开发分支](https://github.com/andylei258-max/147369/tree/dev/tablet-extend-mvp)。本地 Codex 可直接 clone/fetch 后切换该分支。
 
 ## 交付备份
 
@@ -17,9 +17,9 @@
 - `tablet-extend-mvp.zip`：所有已提交源码/文档，以及内置 `tablet-extend-mvp.bundle`，不含 SDK、驱动下载、配对码或本机配置。
 - `tablet-extend-mvp.sha256.txt`：交付文件校验值和最新 commit。
 
-这里的备份是云端本地文件交付，不是已上传 GitHub 的替代说法。Windows 本地 Codex 拿到 bundle/ZIP 后即可完整恢复，所有生成物可以重建。
+GitHub 开发分支现已是正常接手入口；这里的云端本地备份用于离线恢复。Windows 本地 Codex 拿到 bundle/ZIP 后也可以完整恢复，所有生成物可以重建。
 
-## Windows 本地 Codex 从 bundle 恢复
+## Windows 本地 Codex 从 bundle 离线恢复（可选）
 
 先解压 ZIP 或取得单独 bundle，使用实际下载路径替换以下示例。不要覆盖已有工作树的未提交修改。
 
@@ -42,10 +42,10 @@ git push -u origin dev/tablet-extend-mvp
 
 如果远端同名分支已由云端成功推送，先 fetch 比较提交，禁止盲目强推。不要合并 main。
 
-推送成功后检查 GitHub 分支内容和 Actions 结果，并更新此文档/验证记录中的实际远端状态；GitHub Actions 编译成功仍不代表平板实测成功。
+后续修改仍提交并推送开发分支。检查对应 GitHub Actions 结果；GitHub Actions 编译成功仍不代表平板实测成功。
 
-## 修复云端授权
+## 已解决的授权问题
 
-用户可先打开 `https://github.com/settings/installations`，核对用于 ChatGPT/Codex 的 GitHub 应用是否包含该仓库。如果包含仍 403，需检查该应用授予的 Contents 写入能力或云端代码环境 GitHub 连接；不要索要用户密码、把 PAT 发到聊天/公开仓库，或假定聊天连接的账户 admin 权限可替代集成授权。
+排查时确认：GitHub 的 Authorized GitHub Apps 页面已有账号授权，但 Installed GitHub Apps 页面尚未安装连接器。ChatGPT 插件内改为“全部允许”也未单独解决 GitHub 403。用户随后安装 ChatGPT Codex Connector 并授予仓库读写访问，实际 Git push 成功。没有索要密码或 PAT，也没有改变 main。
 
-这是 GitHub 外部凭据授权拒绝，不是程序构建失败，也不是已经通过的批准请求。本项目源码与验证工作不需要重做。
+这个问题已经解决；本项目源码与已有云端验证结果无需重做。

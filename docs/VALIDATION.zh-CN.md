@@ -26,8 +26,7 @@ Android 原产物：`android/app/build/outputs/apk/debug/app-debug.apk`。Window
 
 ## 尚未验证
 
-- PowerShell 构建、下载、防火墙、应急恢复脚本在 Windows 执行。本云端没有 `pwsh`；已验证对应 dotnet/Gradle 命令，不能冒充脚本实机执行。
-- GitHub Actions 的 Windows runner 实际运行结果；即使通过也没有用户驱动或平板。
+- 安卓 PowerShell 构建、驱动下载、防火墙、应急恢复脚本在 Windows 执行。Linux 云端没有 `pwsh`；Windows 构建脚本已在 GitHub Windows runner 执行成功，不能冒充用户电脑实机执行。
 - 性能、真实 Wi-Fi 丢包/延迟、屏幕 DPI/多GPU、原生 GDI 捕获是否黑屏、硬件游标的具体叠加效果。
 - Ctrl+Win 钩子/系统开始菜单冲突、RegisterHotKey 默认和备用组合注册情况、应用间 ClipCursor 竞争。
 - NamedPipe 用户限制与守护进程在 Windows 的进程创建、超时、卡死恢复、UAC/锁屏/睡眠行为。
@@ -39,8 +38,9 @@ Android 原产物：`android/app/build/outputs/apk/debug/app-debug.apk`。Window
 
 ## 云端遇到并处理的问题
 
+- 首次 GitHub Actions [运行 38619877164](https://github.com/andylei258-max/147369/actions/runs/38619877164)：Windows 构建、36 项核心检查、自包含发布和 artifact 上传成功；Android 的 Java 检查与 C#→Java 互通成功，但 SDK 准备阶段报 `sdkmanager: command not found`。流水线补充 `android-actions/setup-android@v3`，显式安装 SDK 工具并设置 PATH；修正后的运行结果另行记录。
 - 最初没有仓库；用户提供目标链接后克隆原仓库，切独立分支，迁入源码。主分支未改。
-- 已创建本地 Git 提交。Git push 返回 403，GitHub 工具创建分支也返回 `Resource not accessible by integration`。远端仍只有原 main；未触发 CI。已准备完整历史的 Git bundle 备份，恢复/推送方法见 STORAGE.zh-CN.md。账户显示具有仓库权限不等于当前集成凭据获准写入。
+- 最初 Git push 和 GitHub 工具创建分支均返回 403 / `Resource not accessible by integration`。用户完成 GitHub App 安装与仓库访问授权后，开发分支已成功推送，main 未改；GitHub Actions 已触发。账户授权、ChatGPT 操作许可与 GitHub App 仓库安装授权是不同层次。完整 Git 历史备份仍保留，恢复方法见 STORAGE.zh-CN.md。
 - 云端只有 Java 运行环境、没有 javac，下载并使用 JDK17。
 - Gradle 默认未使用环境代理，首次解析 AGP 失败；修正 **云端运行参数**和 CA 信任后官方仓库依赖成功下载，不关闭证书验证，不替换来历不明的仓库。
 - 第一轮 Android lint 有备份规则、绘制分配、图标、静态文字提示；补充备份排除规则、复用 RectF、图标和字符串资源，最后 lint 无问题。

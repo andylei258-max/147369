@@ -38,6 +38,9 @@ jobs:
         run: |
           dotnet build tests/TabletExtend.Checks -c Release
           python3 scripts/check-interop.py
+      - uses: android-actions/setup-android@v3
+        with:
+          log-accepted-android-sdk-licenses: false
       - name: Prepare SDK
         run: sdkmanager 'platforms;android-35' 'build-tools;34.0.0'
       - name: Build native APK and lint (no tablet test)

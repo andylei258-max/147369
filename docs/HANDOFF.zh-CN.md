@@ -2,7 +2,7 @@
 
 更新时间：2026-10-14。目标仓库：`https://github.com/andylei258-max/147369`；独立分支：`dev/tablet-extend-mvp`。不要合并主分支。本文供本地 Codex 操作；需要用户碰设备时，一次只让用户做一步，用通俗中文说明。
 
-**交接时远端写入被 403 拒绝；该开发分支当前只在云端本地。** 如果 GitHub 还没有此分支，先按 [STORAGE.zh-CN.md](STORAGE.zh-CN.md) 从交付的 Git bundle 恢复，再执行下面步骤。不要以为仅 clone 远端当前 main 就能取得项目。
+**开发分支已成功推送到 GitHub。** 之前的 403 已解决，可以直接 clone 并切换 `dev/tablet-extend-mvp`；不要在仍保留初始内容的 main 上寻找项目。离线备份恢复方法见 [STORAGE.zh-CN.md](STORAGE.zh-CN.md)。
 
 ## 当前进度
 
@@ -162,7 +162,7 @@ Start-Process -FilePath $Exe -ArgumentList @('--diagnostics', $Out) -Wait
 仓库：https://github.com/andylei258-max/147369
 开发分支：dev/tablet-extend-mvp。不得合并 main。
 
-云端 Git push 和 GitHub 创建分支被 403 拒绝，开发提交已存在于交付的 tablet-extend-mvp.bundle/备份ZIP；如果远端没有开发分支，请先用该 bundle 恢复分支和完整 Git 历史，再用本机授权 push。不得假装远端已有代码，也不要用空的 main 开始重写。
+开发分支已经推送成功。请 clone/fetch 仓库后切换 dev/tablet-extend-mvp，不要在 main 上重新开发。交付的 tablet-extend-mvp.bundle/备份ZIP仅用于离线恢复。
 
 先读取 README.md、docs/HANDOFF.zh-CN.md、docs/VALIDATION.zh-CN.md 和 docs/DEVICE-TESTS.zh-CN.md。
 云端已完成 .NET Windows 交叉编译/自包含发布、原生 Android APK 构建、核心状态与 TCP 检查和 C#→Java JPEG 互通；未在真实 Windows/平板验证驱动、主机、快捷键或 APK。

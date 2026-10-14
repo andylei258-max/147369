@@ -6,7 +6,7 @@
 
 开发分支：`dev/tablet-extend-mvp`。不合并到 `main`。
 
-**当前保存状态：开发分支和提交已保存在云端本地；Git push 与 GitHub 工具创建分支均被 403 拒绝，尚未保存到远端。** 请看 [提交恢复说明](docs/STORAGE.zh-CN.md)。交付备份 ZIP/Git bundle 包含源码、文档及完整 Git 历史；授权修复后可直接推送，不必重新开发。
+**当前保存状态：代码和交接文档已成功推送到 GitHub 的 [dev/tablet-extend-mvp 分支](https://github.com/andylei258-max/147369/tree/dev/tablet-extend-mvp)，未合并 main。** 此前的 403 已在安装 GitHub 连接器并授予仓库访问后解除。交付 ZIP/Git bundle 作为额外备份，详情见 [保存与恢复说明](docs/STORAGE.zh-CN.md)。
 
 ## 能力
 
@@ -42,7 +42,7 @@ git switch dev/tablet-extend-mvp
 ./scripts/build-android.ps1
 ```
 
-Windows：`artifacts/windows-win-x64/TabletExtend.Windows.exe`，保留整个发布目录。APK：`artifacts/android/tablet-extend-debug.apk`。脚本在 Windows 的实际执行尚待本地验证；在云端已验证相应 dotnet / Gradle 构建命令。
+Windows：`artifacts/windows-win-x64/TabletExtend.Windows.exe`，保留整个发布目录。APK：`artifacts/android/tablet-extend-debug.apk`。Windows 构建脚本已在 GitHub Windows runner 执行成功；安卓 PowerShell 构建脚本尚待本地验证，在 Linux 云端已验证对应 Gradle 构建命令。详情见验证记录。
 
 驱动下载：`./scripts/get-vdd.ps1`，只下载和 SHA256 校验，不自动安装。安装、驱动签名和管理员权限处理参见交接文档。
 
