@@ -39,6 +39,7 @@ Android 原产物：`android/app/build/outputs/apk/debug/app-debug.apk`。Window
 ## 云端遇到并处理的问题
 
 - 首次 GitHub Actions [运行 38619877164](https://github.com/andylei258-max/147369/actions/runs/38619877164)：Windows 构建、36 项核心检查、自包含发布和 artifact 上传成功；Android 的 Java 检查与 C#→Java 互通成功，但 SDK 准备阶段报 `sdkmanager: command not found`。流水线补充 `android-actions/setup-android@v3`，显式安装 SDK 工具并设置 PATH；修正后的运行结果另行记录。
+- 随后的 SDK 安装动作默认请求已下架的旧 `tools` 包；显式指定 `packages: platform-tools`，所需 API35/Build Tools34.0.0 仍由下一步安装，避免依赖旧包。
 - 最初没有仓库；用户提供目标链接后克隆原仓库，切独立分支，迁入源码。主分支未改。
 - 最初 Git push 和 GitHub 工具创建分支均返回 403 / `Resource not accessible by integration`。用户完成 GitHub App 安装与仓库访问授权后，开发分支已成功推送，main 未改；GitHub Actions 已触发。账户授权、ChatGPT 操作许可与 GitHub App 仓库安装授权是不同层次。完整 Git 历史备份仍保留，恢复方法见 STORAGE.zh-CN.md。
 - 云端只有 Java 运行环境、没有 javac，下载并使用 JDK17。
