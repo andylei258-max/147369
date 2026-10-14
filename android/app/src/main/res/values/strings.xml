@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">平板扩展屏</string>
+    <string name="connection_title">填写 Windows 托盘设置中的局域网 IP、端口和配对码</string>
+    <string name="connect">连接扩展屏</string>
+    <string name="disconnect">断开连接</string>
+    <string name="help">仅用于可信局域网。平板仅显示电脑扩展屏，不发送触控输入。长按画面可展开连接设置。</string>
+</resources>

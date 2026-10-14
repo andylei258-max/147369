@@ -1,0 +1,127 @@
+{
+  "checked_at": "2026-10-14",
+  "sources": [
+    {
+      "repo": "HELFZz/OpenDisplay",
+      "license": null,
+      "archived": false,
+      "pushed_at": "2026-10-11T17:13:08Z",
+      "latest_commit": "3d784a6f7e69c74b5edbdbc8dd4fa9eed3834c1c",
+      "commit_date": "2026-10-11T17:12:30Z"
+    },
+    {
+      "repo": "pavlobu/deskreen",
+      "archived": false,
+      "pushed_at": "2026-07-08T14:35:42Z",
+      "license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdx_id": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0",
+        "node_id": "MDc6TGljZW5zZTE="
+      },
+      "latest_commit": "b5dc3d4d1a74ec38091d36578fd84174db3792bc",
+      "commit_date": "2026-07-08T14:35:10Z",
+      "release": {
+        "tag_name": "v3.2.16",
+        "published_at": "2026-07-08T16:51:33Z",
+        "html_url": "https://github.com/pavlobu/deskreen/releases/tag/v3.2.16"
+      }
+    },
+    {
+      "repo": "MolotovCherry/virtual-display-rs",
+      "archived": false,
+      "pushed_at": "2025-03-03T18:37:21Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "latest_commit": "22fcd2e065aac13745cb27dc869848091b9e3a23",
+      "commit_date": "2024-12-11T01:16:39Z",
+      "release": {
+        "tag_name": "v0.3.1",
+        "published_at": "2023-10-22T02:02:51Z",
+        "html_url": "https://github.com/MolotovCherry/virtual-display-rs/releases/tag/v0.3.1"
+      }
+    },
+    {
+      "repo": "LizardByte/Sunshine",
+      "archived": false,
+      "pushed_at": "2026-10-14T17:59:49Z",
+      "license": {
+        "key": "gpl-3.0",
+        "name": "GNU General Public License v3.0",
+        "spdx_id": "GPL-3.0",
+        "url": "https://api.github.com/licenses/gpl-3.0",
+        "node_id": "MDc6TGljZW5zZTk="
+      },
+      "latest_commit": "81a677c1eed6fff50601b683c6a52f5774655394",
+      "commit_date": "2026-10-14T15:48:43Z",
+      "release": {
+        "tag_name": "v2026.914.233613",
+        "published_at": "2026-09-15T01:17:17Z",
+        "html_url": "https://github.com/LizardByte/Sunshine/releases/tag/v2026.914.233613"
+      }
+    },
+    {
+      "repo": "VirtualDrivers/Virtual-Display-Driver",
+      "archived": false,
+      "pushed_at": "2026-09-19T11:36:47Z",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "latest_commit": "d7244969b2aa8bb38e76d79505eda217996cefea",
+      "commit_date": "2026-06-22T22:00:18Z",
+      "release": {
+        "tag_name": "25.7.23",
+        "published_at": "2025-07-23T15:50:20Z",
+        "html_url": "https://github.com/VirtualDrivers/Virtual-Display-Driver/releases/tag/25.7.23"
+      }
+    },
+    {
+      "repo": "moonlight-stream/moonlight-android",
+      "archived": false,
+      "pushed_at": "2026-10-06T08:51:24Z",
+      "license": {
+        "key": "gpl-3.0",
+        "name": "GNU General Public License v3.0",
+        "spdx_id": "GPL-3.0",
+        "url": "https://api.github.com/licenses/gpl-3.0",
+        "node_id": "MDc6TGljZW5zZTk="
+      },
+      "latest_commit": "b48494cb96bff23d8886c4775cc4f39a1075495d",
+      "commit_date": "2026-09-12T19:22:35Z",
+      "release": {
+        "tag_name": "v12.2",
+        "published_at": "2026-09-12T19:28:27Z",
+        "html_url": "https://github.com/moonlight-stream/moonlight-android/releases/tag/v12.2"
+      }
+    },
+    {
+      "repo": "rustdesk/rustdesk",
+      "archived": false,
+      "pushed_at": "2026-10-14T14:49:35Z",
+      "license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdx_id": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0",
+        "node_id": "MDc6TGljZW5zZTE="
+      },
+      "latest_commit": "e910029f510fc9738424984eb3c1e7c63ede0d2a",
+      "commit_date": "2026-10-14T14:49:35Z",
+      "release": {
+        "tag_name": "1.5.0",
+        "published_at": "2026-09-30T16:11:03Z",
+        "html_url": "https://github.com/rustdesk/rustdesk/releases/tag/1.5.0"
+      }
+    }
+  ]
+}

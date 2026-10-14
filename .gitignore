@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+**/build/
+**/.gradle/
+android/local.properties
+artifacts/
+*.user
+*.log
+.idea/
+.DS_Store
