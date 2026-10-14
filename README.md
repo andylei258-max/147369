@@ -6,6 +6,8 @@
 
 开发分支：`dev/tablet-extend-mvp`。不合并到 `main`。
 
+**当前保存状态：开发分支和提交已保存在云端本地；Git push 与 GitHub 工具创建分支均被 403 拒绝，尚未保存到远端。** 请看 [提交恢复说明](docs/STORAGE.zh-CN.md)。交付备份 ZIP/Git bundle 包含源码、文档及完整 Git 历史；授权修复后可直接推送，不必重新开发。
+
 ## 能力
 
 - 复用 [Virtual Display Driver 25.7.23](https://github.com/VirtualDrivers/Virtual-Display-Driver/releases/tag/25.7.23) 提供真正的 Windows 逻辑扩展显示器。驱动独立下载、安装，未经本项目修改。

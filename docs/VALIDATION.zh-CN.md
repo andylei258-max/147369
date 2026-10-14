@@ -40,6 +40,7 @@ Android 原产物：`android/app/build/outputs/apk/debug/app-debug.apk`。Window
 ## 云端遇到并处理的问题
 
 - 最初没有仓库；用户提供目标链接后克隆原仓库，切独立分支，迁入源码。主分支未改。
+- 已创建本地 Git 提交。Git push 返回 403，GitHub 工具创建分支也返回 `Resource not accessible by integration`。远端仍只有原 main；未触发 CI。已准备完整历史的 Git bundle 备份，恢复/推送方法见 STORAGE.zh-CN.md。账户显示具有仓库权限不等于当前集成凭据获准写入。
 - 云端只有 Java 运行环境、没有 javac，下载并使用 JDK17。
 - Gradle 默认未使用环境代理，首次解析 AGP 失败；修正 **云端运行参数**和 CA 信任后官方仓库依赖成功下载，不关闭证书验证，不替换来历不明的仓库。
 - 第一轮 Android lint 有备份规则、绘制分配、图标、静态文字提示；补充备份排除规则、复用 RectF、图标和字符串资源，最后 lint 无问题。

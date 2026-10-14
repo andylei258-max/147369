@@ -2,6 +2,8 @@
 
 更新时间：2026-10-14。目标仓库：`https://github.com/andylei258-max/147369`；独立分支：`dev/tablet-extend-mvp`。不要合并主分支。本文供本地 Codex 操作；需要用户碰设备时，一次只让用户做一步，用通俗中文说明。
 
+**交接时远端写入被 403 拒绝；该开发分支当前只在云端本地。** 如果 GitHub 还没有此分支，先按 [STORAGE.zh-CN.md](STORAGE.zh-CN.md) 从交付的 Git bundle 恢复，再执行下面步骤。不要以为仅 clone 远端当前 main 就能取得项目。
+
 ## 当前进度
 
 已实现真实扩展桌面的 Windows 采集主机、原生安卓接收端、鼠标开关/强制锁状态机、默认快捷键和可修改快捷键、托盘、原生状态图标、绘制确认、断联/超时释放、独立守护进程、排列位置菜单、配对与有限帧长。
@@ -159,6 +161,8 @@ Start-Process -FilePath $Exe -ArgumentList @('--diagnostics', $Out) -Wait
 请接手“安卓平板作为 Windows 真正扩展屏”项目。
 仓库：https://github.com/andylei258-max/147369
 开发分支：dev/tablet-extend-mvp。不得合并 main。
+
+云端 Git push 和 GitHub 创建分支被 403 拒绝，开发提交已存在于交付的 tablet-extend-mvp.bundle/备份ZIP；如果远端没有开发分支，请先用该 bundle 恢复分支和完整 Git 历史，再用本机授权 push。不得假装远端已有代码，也不要用空的 main 开始重写。
 
 先读取 README.md、docs/HANDOFF.zh-CN.md、docs/VALIDATION.zh-CN.md 和 docs/DEVICE-TESTS.zh-CN.md。
 云端已完成 .NET Windows 交叉编译/自包含发布、原生 Android APK 构建、核心状态与 TCP 检查和 C#→Java JPEG 互通；未在真实 Windows/平板验证驱动、主机、快捷键或 APK。
